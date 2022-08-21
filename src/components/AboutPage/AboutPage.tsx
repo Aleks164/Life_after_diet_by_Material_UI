@@ -17,7 +17,7 @@ theme.typography.overline = {
 export const AboutPage = () => (
   <Paper
     sx={{
-      marginTop: "20px",
+      marginTop: "30px",
       maxWidth: "1050px",
       marginRight: "auto",
       marginLeft: "auto",
@@ -46,40 +46,17 @@ export const AboutPage = () => (
         }}
       >
         <ThemeProvider theme={theme}>
-          <Typography variant="overline">
-            Web-site "Life after diet..."
-          </Typography>
+          <Typography variant="h4">Web-site "Life after diet..."</Typography>
         </ThemeProvider>
-        <Typography sx={{ marginTop: "35px" }}>
-          Developed by:
-          <Typography>
-            <a
-              href="mailto:alekseyleha@mail.ru"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Box
-                component="img"
-                sx={{
-                  width: "15px",
-                  height: "15px",
-                  verticalAlign: "middle",
-                  marginRight: "5px",
-                }}
-                alt={"leo"}
-                src={
-                  "https://webstockreview.net/images250_/email-clipart-mail-icon.png"
-                }
-              />
-              {"alekseyleha@mail.ru"}
-            </a>
-          </Typography>
-          <Typography>
-            <a
-              title="https://github.com/Aleks164"
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/Aleks164"
+        <Box sx={{ marginTop: "35px" }}>
+          <Typography fontSize={25}>You can find me by:</Typography>
+
+          <a href="mailto:alekseyleha@mail.ru" rel="noreferrer" target="_blank">
+            <Grid
+              container
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
             >
               <Box
                 component="img"
@@ -87,20 +64,48 @@ export const AboutPage = () => (
                   width: "25px",
                   height: "25px",
                   verticalAlign: "middle",
-                  marginLeft: "-5px",
+                  marginRight: "5px",
                 }}
-                alt={"leo"}
+                alt={"mail"}
+                src={
+                  "https://webstockreview.net/images250_/email-clipart-mail-icon.png"
+                }
+              />
+              <Typography fontSize={25}>alekseyleha@mail.ru</Typography>
+            </Grid>
+          </a>
+          <a
+            title="https://github.com/Aleks164"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/Aleks164"
+          >
+            <Grid
+              container
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+            >
+              <Box
+                component="img"
+                sx={{
+                  width: "45px",
+                  height: "45px",
+                  verticalAlign: "middle",
+                  marginLeft: "-10px",
+                }}
+                alt={"github"}
                 src={
                   "https://www.comparasoftware.com/wp-content/uploads/2018/09/logoGitHub-150x150.png"
                 }
               />
-              Aleks164
-            </a>
-          </Typography>
-        </Typography>
+              <Typography fontSize={25}>Aleks164</Typography>
+            </Grid>
+          </a>
+        </Box>
       </Grid>
     </Grid>
-    <Typography sx={{ p: 3 }}>
+    <Typography fontSize={20} sx={{ p: 3 }}>
       The application implements:
       <br />
       - client routing;
@@ -117,11 +122,10 @@ export const AboutPage = () => (
         rel="noreferrer"
         href="https://aleks164.github.io/Life_after_diet/recipe/638822"
       >
-        {" "}
-        (Examle)
+        {" Examle "}
       </a>
       <br />
-      The application is written in React with TS.
+      The application is written in React with TS and Material UI.
       <br />
       Сonfigured Continuous Integration and Continuous Delivery (CI/CD).
       <br />

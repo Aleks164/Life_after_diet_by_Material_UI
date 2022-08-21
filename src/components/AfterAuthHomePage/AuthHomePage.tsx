@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
@@ -45,16 +45,12 @@ export const AuthHomePage = ({
   setRequestSettings,
 }: BookmarkPropsType) => {
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
-
-  const setNextTab = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  const [value, setValue] = useState(0);
 
   return (
     <Box
       sx={{
-        m: 1,
+        mb: 1,
         mt: "30px",
         maxWidth: "1050px",
         ml: "auto",
@@ -64,7 +60,9 @@ export const AuthHomePage = ({
       <AppBar position="static">
         <Tabs
           value={value}
-          onChange={setNextTab}
+          onChange={(_, newValue) => {
+            setValue(newValue);
+          }}
           indicatorColor="secondary"
           textColor="inherit"
           variant="fullWidth"

@@ -1,12 +1,9 @@
 import {
-  Box,
   Paper,
   Alert,
   FormControl,
   Button,
-  Stack,
   Grid,
-  Typography,
   FormLabel,
   FormGroup,
   FormControlLabel,
@@ -46,6 +43,7 @@ export const CuisinesListBookmark = ({
           {fullList.map((cusine, index) => (
             <Grid item xs={2} sm={3} md={4} key={index}>
               <FormControlLabel
+                sx={{ userSelect: "none" }}
                 control={
                   <Checkbox
                     checked={settings.cuisinesList.includes(cusine)}

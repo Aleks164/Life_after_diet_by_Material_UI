@@ -3,16 +3,12 @@ import {
   Box,
   Divider,
   FormControl,
-  FormLabel,
   InputLabel,
   MenuItem,
   Select,
-  Typography,
 } from "@mui/material";
-import { BookmarkPropsType, SelectorParamType } from "../../../types/types";
+import { BookmarkPropsType } from "../../../types/types";
 import { DietList } from "../../../utils/consts";
-import { OnOffTumbler } from "@/components/OnOffTumbler/OnOffTumbler";
-import { tumblerSwitcher } from "./tumblerSwitcher";
 
 export const DietChooseField = ({
   settings,
@@ -20,14 +16,6 @@ export const DietChooseField = ({
 }: BookmarkPropsType) => {
   const curDiet = settings.dietSelector.diet;
   const [inputValue, setInputValue] = useState(curDiet);
-
-  const selectorParam = {
-    settings,
-    option: "dietSelector",
-    optionType: "diet",
-    optionTypeValue: "",
-    setRequestSettings,
-  } as SelectorParamType;
 
   return (
     <Box sx={{ minWidth: 200 }}>
@@ -45,11 +33,17 @@ export const DietChooseField = ({
             setRequestSettings(settings);
           }}
         >
-          {DietList.map((dietName, index) => (
-            <MenuItem key={index} value={dietName}>
-              {dietName.toLowerCase()}
-            </MenuItem>
-          ))}
+          {[
+            <MenuItem key={"diets"} value="">
+              <em>None</em>
+            </MenuItem>,
+          ].concat(
+            DietList.map((dietName, index) => (
+              <MenuItem key={index} value={dietName}>
+                {dietName.toLowerCase()}
+              </MenuItem>
+            ))
+          )}
         </Select>
       </FormControl>
     </Box>

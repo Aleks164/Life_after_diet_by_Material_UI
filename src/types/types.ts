@@ -231,11 +231,9 @@ export type SettingIngrType = {
 };
 
 export interface SelectorParamType {
-  isFieldAvailable: boolean;
   settings: SettingType;
   option: KeySettingType;
   optionType: string;
-  optionTypeValue: any;
   setRequestSettings: SetSettingType;
 }
 
@@ -306,3 +304,9 @@ export type UrlNameTypes = {
 };
 
 export type IconPropsType = { diets: DietListType[]; veryHealthy: boolean };
+
+export type DeletingParamType = {
+  deletingIngridient: string,
+  settings: SettingType
+  , setRequestSettings: SetSettingType
+}

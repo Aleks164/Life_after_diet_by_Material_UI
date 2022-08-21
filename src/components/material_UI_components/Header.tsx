@@ -1,5 +1,12 @@
 import React from "react";
-import { AppBar, IconButton, Toolbar, Typography, Grid } from "@mui/material";
+import {
+  AppBar,
+  IconButton,
+  Toolbar,
+  Typography,
+  Grid,
+  Badge,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { Home, History, Favorite, Info } from "@mui/icons-material";
 import { LogOutLink } from "../LogOutLink/LogOutLink";
@@ -49,15 +56,17 @@ export const Header = ({
             </Link>
             {isAuth && (
               <>
-                <Link
-                  title="History"
-                  color="inherit"
-                  to={RoutesName.HISTORY_ROUTE}
-                >
-                  <IconButton sx={{ color: "rgb(255 255 255 / 85%)" }}>
-                    <History fontSize="large" />
-                  </IconButton>
-                </Link>
+                <Badge color="warning" badgeContent={"2"} invisible={false}>
+                  <Link
+                    title="History"
+                    color="inherit"
+                    to={RoutesName.HISTORY_ROUTE}
+                  >
+                    <IconButton sx={{ color: "rgb(255 255 255 / 85%)" }}>
+                      <History fontSize="large" />
+                    </IconButton>
+                  </Link>
+                </Badge>
                 <Link
                   title="Favorite"
                   color="inherit"

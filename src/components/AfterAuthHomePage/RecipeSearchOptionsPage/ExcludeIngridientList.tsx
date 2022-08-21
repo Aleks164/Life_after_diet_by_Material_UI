@@ -21,7 +21,6 @@ export const ExcludeIngridientList = ({
     settings,
     option: "excludeIngridientsSelector",
     optionType: "excludeIngridients",
-    optionTypeValue: [],
     fullListOfIngridients: excludeIngridients,
     ingridientInputValue,
     setRequestSettings,

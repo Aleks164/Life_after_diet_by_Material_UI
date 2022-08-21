@@ -46,6 +46,7 @@ export const IntolerancesListBookmark = ({
           {fullList.map((intolerance, index) => (
             <Grid item xs={2} sm={3} md={4} key={index}>
               <FormControlLabel
+                sx={{ userSelect: "none" }}
                 control={
                   <Checkbox
                     checked={settings.intolerancesList.includes(intolerance)}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { BookmarkPropsType, SelectorParamType } from "../../../types/types";
-import { MealTypes } from "../../../utils/consts";
+import { BookmarkPropsType } from "@/types/types";
+import { MealTypes } from "@/utils/consts";
 
 export const MealTypesSelector = ({
   settings,
@@ -9,14 +9,6 @@ export const MealTypesSelector = ({
 }: BookmarkPropsType) => {
   const curMealType = settings.mealTypesSelector.mealType;
   const [selectValue, setSelectValue] = useState(curMealType);
-
-  const selectorParam = {
-    settings,
-    option: "mealTypesSelector",
-    optionType: "mealType",
-    optionTypeValue: "main course",
-    setRequestSettings,
-  } as SelectorParamType;
 
   return (
     <Box sx={{ minWidth: 200 }}>
@@ -33,11 +25,17 @@ export const MealTypesSelector = ({
             setRequestSettings(settings);
           }}
         >
-          {MealTypes.map((type, index) => (
-            <MenuItem key={index} value={type}>
-              {type.toLowerCase()}
-            </MenuItem>
-          ))}
+          {[
+            <MenuItem key={"diets"} value="">
+              <em>None</em>
+            </MenuItem>,
+          ].concat(
+            MealTypes.map((type, index) => (
+              <MenuItem key={index} value={type}>
+                {type.toLowerCase()}
+              </MenuItem>
+            ))
+          )}
         </Select>
       </FormControl>
     </Box>

@@ -6,7 +6,6 @@ export function addIngredientToList(
     settings,
     ingridientInputValue,
     fullListOfIngridients,
-    isFieldAvailable,
     option,
     optionType,
     setRequestSettings,
@@ -21,8 +20,7 @@ export function addIngredientToList(
   const checkIncludCroosing =
     settings.ingridientsSelector.ingridients.indexOf(ingridientInputValue);
   if (fullListOfIngridients.indexOf(ingridientInputValue) === -1) {
-    let message = 'Please input a valid ingridient from list and press "+"';
-    if (!isFieldAvailable) message = "You must first press 'On'";
+    const message = 'Please input a valid ingridient from list and press "+"';
     setMessage(message);
     return;
   }

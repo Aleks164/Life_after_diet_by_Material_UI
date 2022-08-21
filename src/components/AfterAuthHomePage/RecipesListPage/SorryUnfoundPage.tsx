@@ -21,7 +21,7 @@ export const SorryUnfoundPage = ({
       alignItems="center"
     >
       {!isHistory && !isFavourite ? (
-        <>
+        <Grid item>
           {idIsNotFund ? (
             <Paper sx={{ mt: "35px", p: 2 }} elevation={3}>
               <Typography textAlign={"center"} variant="h4">
@@ -37,7 +37,7 @@ export const SorryUnfoundPage = ({
               the number of parameters and try again, this should help.
             </Typography>
           )}
-        </>
+        </Grid>
       ) : null}
       {isHistory && (
         <Typography sx={{ m: 3 }}>Your history is empty.</Typography>

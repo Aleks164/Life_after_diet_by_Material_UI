@@ -36,7 +36,11 @@ export const AccordionExcludeIngridients = ({
                   <Button
                     color="primary"
                     onClick={() => {
-                      deleteExcludeFromList(ingridient, selectorParam);
+                      deleteExcludeFromList({
+                        deletingIngridient: ingridient,
+                        settings,
+                        setRequestSettings: selectorParam.setRequestSettings,
+                      });
                     }}
                     size="small"
                   >

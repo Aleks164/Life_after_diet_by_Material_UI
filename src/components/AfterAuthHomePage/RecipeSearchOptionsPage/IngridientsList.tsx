@@ -11,18 +11,15 @@ export const IngridientsList = ({
   setRequestSettings,
 }: BookmarkPropsType) => {
   const ingridients = Object.keys(ingridientsList);
-  const ingridientStatus = settings.ingridientsSelector.status;
   const [ingridientInputValue, setIngridientInputValue] = useState("");
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [expanded, setExpanded] = useState<boolean>(false);
 
   const selectorParam = {
-    isFieldAvailable: ingridientStatus,
     settings,
     option: "ingridientsSelector",
     optionType: "ingridients",
-    optionTypeValue: [],
     fullListOfIngridients: ingridients,
     ingridientInputValue,
     setRequestSettings,

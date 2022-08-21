@@ -1,4 +1,5 @@
-import { RedirectParamType } from "../../../types/types";
+import { RedirectParamType } from "@/types/types";
+
 
 export function saveHistory({
   title,
