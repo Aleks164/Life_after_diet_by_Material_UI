@@ -1,8 +1,8 @@
-import { InputParamType } from "../../../types/types";
+import { DeletingParamType } from "../../../types/types";
 
 export function deleteIngridientFromList(
-  deletingIngridient: string,
-  { settings, setRequestSettings }: InputParamType
+  { deletingIngridient,
+    settings, setRequestSettings }: DeletingParamType
 ) {
   const filtredList = settings.ingridientsSelector.ingridients.filter(
     (ingridient) => ingridient !== deletingIngridient

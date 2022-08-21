@@ -7,5 +7,5 @@ export const defaultSettings: SettingType = {
   ingridientsSelector: { ingridients: [], },
   mealTypesSelector: { mealType: "", },
   excludeIngridientsSelector: { excludeIngridients: [], },
-  maxCaloriesInput: { value: 500, },
+  maxCaloriesInput: { value: 1000, },
 };

@@ -10,19 +10,19 @@ export const HaveChosenInfo = ({ сlientSettings }: ClientSettingsType) => (
       You have chosen:
     </Typography>
     <Box>
-      {сlientSettings.dietSelector.status && (
+      {сlientSettings.dietSelector.diet && (
         <SinglStringChooseItem
           label={"Diet:"}
           content={сlientSettings.dietSelector.diet}
         />
       )}
-      {сlientSettings.mealTypesSelector.status && (
+      {сlientSettings.mealTypesSelector.mealType && (
         <SinglStringChooseItem
           label={"Meal type:"}
           content={сlientSettings.mealTypesSelector.mealType}
         />
       )}
-      {сlientSettings.maxCaloriesInput.status && (
+      {сlientSettings.maxCaloriesInput.value && (
         <SinglStringChooseItem
           label={"Maximum calories:"}
           content={String(сlientSettings.maxCaloriesInput.value)}
@@ -40,13 +40,14 @@ export const HaveChosenInfo = ({ сlientSettings }: ClientSettingsType) => (
           сlientSettings={сlientSettings.intolerancesList}
         />
       )}
-      {сlientSettings.ingridientsSelector.status && (
+      {сlientSettings.ingridientsSelector.ingridients.length > 0 && (
         <ChooseItem
           itemName={"List of ingridients: "}
           сlientSettings={сlientSettings.ingridientsSelector.ingridients}
         />
       )}
-      {сlientSettings.excludeIngridientsSelector.status && (
+      {сlientSettings.excludeIngridientsSelector.excludeIngridients.length >
+        0 && (
         <ChooseItem
           itemName={"List of excludes: "}
           сlientSettings={
