@@ -1,64 +1,28 @@
-import {
-  Box,
-  Button,
-  Chip,
-  Divider,
-  Grid,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Chip, Divider, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import CommitIcon from "@mui/icons-material/Commit";
-import { RecipeType, TabPanelProps } from "../../../types/types";
+import { RecipeType } from "../../../types/types";
 import { Icons } from "./Icons";
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-
-function CustomDivider() {
-  return <Divider sx={{ m: 1 }} />;
-}
+import { TabPanel } from "../../TabPanel/TabPanel";
+import { CustomDivider } from "./CustomDivider";
+import { AppTabsContainer } from "../../TabPanel/AppTabsContainer";
 
 export const RecipeInstruction = ({ recipe }: RecipeType) => {
   const [hideList, setHideList] = useState(true);
   const instructions = { __html: recipe.instructions };
   const [value, setValue] = useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
+  const listOfHeaders = ["Instruction", "Steps", "Preparing ingredients"];
   const sorryText = `Sorry, but instruction for this recipe don't wrote yet`;
 
   return (
     <Grid container>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs value={value} onChange={handleChange} aria-label="recipes">
-            <Tab label="Instruction" {...a11yProps(0)} />
-            <Tab label="Steps" {...a11yProps(1)} />
-            <Tab label="Preparing ingredients" {...a11yProps(2)} />
-          </Tabs>
+          <AppTabsContainer
+            value={value}
+            setValue={setValue}
+            listOfHeaders={listOfHeaders}
+          />
         </Box>
         <TabPanel value={value} index={0}>
           <Typography variant="h4">Instruction</Typography>

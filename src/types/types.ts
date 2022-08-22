@@ -135,6 +135,8 @@ export type SetInputValue = React.Dispatch<React.SetStateAction<string>>;
 
 export type SettingParamType = { settings: SettingType };
 
+export type ConfiguratorItemParamType = { settings: SettingType; setRequestSettings: SetRequestSettingsType; };
+
 export type ClientSettingsType = {
   сlientSettings: SettingType;
 };
@@ -153,10 +155,26 @@ export type DietParamType = {
   setIsLoading: SetIsLoadingType;
 };
 
+
+export type chooseClearAllType = (setRequestSettings: SetRequestSettingsType, settings: SettingType, fullList: string[]) => void;
+
+export type togleStatusType = (e: React.ChangeEvent<HTMLInputElement>, setRequestSettings: SetRequestSettingsType, settings: SettingType) => void;
+
 export type BookmarkPropsType = {
   settings: SettingType;
   setRequestSettings: SetRequestSettingsType;
+  chooseClearAll: chooseClearAllType;
+  togleStatus: togleStatusType;
+  fullList: string[];
+  bookmarkLable: string;
+  alertInfo: string;
+  fieldName: "cuisinesList" | "intolerancesList";
 };
+
+export interface BookmarkItemListParamType {
+  settings: SettingType; setRequestSettings: SetRequestSettingsType; fullList: string[]; togleStatus: togleStatusType; fieldName: "cuisinesList" | "intolerancesList";
+
+}
 
 export type selectorParamFunction = (
   tumblerStatus: boolean,
@@ -306,7 +324,13 @@ export type UrlNameTypes = {
 export type IconPropsType = { diets: DietListType[]; veryHealthy: boolean };
 
 export type DeletingParamType = {
-  deletingIngridient: string,
+  deletingIngridient: string;
   settings: SettingType
-  , setRequestSettings: SetSettingType
+  ; setRequestSettings: SetSettingType
+}
+
+export type AppTabsContainerParamType = {
+  value: number;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+  listOfHeaders: string[];
 }

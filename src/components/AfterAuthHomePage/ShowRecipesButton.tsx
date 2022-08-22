@@ -5,7 +5,7 @@ import { ViewRecipeParamType } from "../../types/types";
 import { useClientSettings } from "../../hooks/useClientSettings";
 import { showRecipes } from "./showRecipes";
 
-export const ViewRecipesButton = ({
+export const ShowRecipesButton = ({
   settings,
   setIsLoading,
 }: ViewRecipeParamType) => {

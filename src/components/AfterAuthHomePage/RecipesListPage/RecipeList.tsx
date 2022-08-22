@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import {
-  CircularProgress,
-  Grid,
-  IconButton,
-  Paper,
-  styled,
-  Typography,
-} from "@mui/material";
+import { Grid, IconButton, Paper, styled, Typography } from "@mui/material";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import { useClientSettings } from "../../../hooks/useClientSettings";
@@ -17,6 +10,7 @@ import { SorryUnfoundPage } from "./SorryUnfoundPage";
 import { RoutesName } from "../../../utils/routes";
 import { RecipesConteiner } from "./RecipesConteiner";
 import { flipRecipePage } from "./flipRecipePage";
+import { CustomSpinner } from "@/components/CustomSpinner/CustomSpinner";
 
 export const RecipeList = ({
   recipeInfo,
@@ -82,7 +76,7 @@ export const RecipeList = ({
   return (
     <Paper
       sx={{
-        m: 1,        
+        m: 1,
         maxWidth: "1250px",
         ml: "auto",
         mr: "auto",
@@ -170,15 +164,7 @@ export const RecipeList = ({
                 )}
               </>
             ) : (
-              <CircularProgress
-                size={150}
-                sx={{
-                  display: "block",
-                  margin: "auto",
-                  marginTop: "15%",
-                  marginBottom: "25%",
-                }}
-              />
+              <CustomSpinner />
             )}
           </Grid>
         </Grid>

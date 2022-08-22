@@ -11,12 +11,10 @@ import { RecipesListPage } from "./components/AfterAuthHomePage/RecipesListPage/
 import { SignUp } from "./components/AuthPage/SignUp/SignUp";
 import { AboutPage } from "./components/AboutPage/AboutPage";
 import { RoutesName } from "./utils/routes";
-import { Header } from "./components/material_UI_components/Header";
-import { Layout } from "./components/material_UI_components/Layout";
+import { Layout } from "./components/Layout/Layout";
 
 export const AppRouter = () => {
   const userAuth = useAuth().user;
-  console.log(userAuth);
   return (
     <Routes>
       <Route path="/" element={<Navigate to={RoutesName.HOME_PAGE_ROUTE} />} />
@@ -26,15 +24,13 @@ export const AppRouter = () => {
       >
         <Route index element={<HomePageSwitcher isAuth={userAuth} />} />
         <Route path={RoutesName.ABOUT_ROUTE} element={<AboutPage />} />
-        {!userAuth ? (
+        {!userAuth && (
           <>
             <Route path={RoutesName.LOGIN_ROUTE} element={<Login />} />
             <Route path={RoutesName.SIGNUP_ROUTE} element={<SignUp />} />
           </>
-        ) : (
-          ""
         )}
-        {userAuth ? (
+        {userAuth && (
           <>
             <Route path={RoutesName.HISTORY_ROUTE} element={<HistoryPage />} />
             <Route
@@ -50,8 +46,6 @@ export const AppRouter = () => {
               element={<RecipesListPage />}
             />
           </>
-        ) : (
-          ""
         )}
         <Route path="*" element={<RequireAuth />} />
       </Route>

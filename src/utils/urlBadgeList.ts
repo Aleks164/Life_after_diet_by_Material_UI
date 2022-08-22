@@ -11,7 +11,7 @@ import whole30 from "@/assets/whole30.svg";
 import { UrlNameTypes } from "@/types/types";
 
 
-export const DietListLowerCase = ['gluten free', 'dairy free', 'vegetarian', 'lacto-vegetarian', 'ovo-vegetarian', 'vegan', 'lacto ovo vegetarian', 'pescetarian', 'paleo', 'paleolithic', 'primal', 'low fodmap', 'whole 30'
+export const DietListLowerCase = ['gluten free', 'dairy free', 'vegetarian', 'lacto-vegetarian', 'ovo-vegetarian', 'vegan', 'lacto ovo vegetarian', 'pescatarian', 'pescetarian', 'paleo', 'paleolithic', 'primal', 'low fodmap', 'whole 30', 'fodmap friendly'
 ] as const;
 
 export const urlBadgeList: UrlNameTypes = {
@@ -36,7 +36,10 @@ export const urlBadgeList: UrlNameTypes = {
     "vegan": {
         path: vegan
     },
-    "pescetarian": {
+    'pescatarian': {
+        path: pescetarian
+    },
+    'pescetarian': {
         path: pescetarian
     },
     "paleo": {
@@ -49,6 +52,9 @@ export const urlBadgeList: UrlNameTypes = {
         path: primal
     },
     "low fodmap": {
+        path: lowfodmap
+    },
+    "fodmap friendly": {
         path: lowfodmap
     },
     "whole 30": {

@@ -6,12 +6,12 @@ import {
   Slider,
   Typography,
 } from "@mui/material";
-import { BookmarkPropsType } from "../../../types/types";
+import { ConfiguratorItemParamType } from "@/types/types";
 
 export const MaxCaloriesInput = ({
   settings,
   setRequestSettings,
-}: BookmarkPropsType) => {
+}: ConfiguratorItemParamType) => {
   const [maxCalories, setMaxCalories] = useState(
     settings.maxCaloriesInput.value
   );
@@ -37,7 +37,7 @@ export const MaxCaloriesInput = ({
         </Typography>
         <Slider
           aria-label="Temperature"
-          defaultValue={maxCalories}
+          value={maxCalories}
           valueLabelDisplay="auto"
           marks
           step={50}

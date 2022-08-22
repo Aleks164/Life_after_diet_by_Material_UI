@@ -7,13 +7,13 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { BookmarkPropsType } from "../../../types/types";
-import { DietList } from "../../../utils/consts";
+import { ConfiguratorItemParamType } from "@/types/types";
+import { DietList } from "@/utils/consts";
 
 export const DietChooseField = ({
   settings,
   setRequestSettings,
-}: BookmarkPropsType) => {
+}: ConfiguratorItemParamType) => {
   const curDiet = settings.dietSelector.diet;
   const [inputValue, setInputValue] = useState(curDiet);
 

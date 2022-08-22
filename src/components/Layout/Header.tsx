@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  AppBar,
-  IconButton,
-  Toolbar,
-  Typography,
-  Grid
-} from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Home, History, Favorite, Info } from "@mui/icons-material";
 import { LogOutLink } from "../LogOutLink/LogOutLink";
@@ -54,16 +48,16 @@ export const Header = ({
               </IconButton>
             </Link>
             {isAuth && (
-              <>                
-                  <Link
-                    title="History"
-                    color="inherit"
-                    to={RoutesName.HISTORY_ROUTE}
-                  >
-                    <IconButton sx={{ color: "rgb(255 255 255 / 85%)" }}>
-                      <History fontSize="large" />
-                    </IconButton>
-                  </Link>                            
+              <>
+                <Link
+                  title="History"
+                  color="inherit"
+                  to={RoutesName.HISTORY_ROUTE}
+                >
+                  <IconButton sx={{ color: "rgb(255 255 255 / 85%)" }}>
+                    <History fontSize="large" />
+                  </IconButton>
+                </Link>
                 <Link
                   title="Favorite"
                   color="inherit"
@@ -72,7 +66,7 @@ export const Header = ({
                   <IconButton sx={{ color: "rgb(255 255 255 / 85%)" }}>
                     <Favorite fontSize="large" />
                   </IconButton>
-                </Link> 
+                </Link>
               </>
             )}
             <Link title="About" color="inherit" to={RoutesName.ABOUT_ROUTE}>
@@ -108,15 +102,15 @@ export const Header = ({
     {isAuth && (
       <Typography
         variant="h5"
-        sx={{        
+        sx={{
           fontFamily: "cursive",
           color: "#edefff",
           textShadow: "#3d3d3e 3px 0px 1px",
           fontWeight: "900",
-          m:0,
-          ml:"auto",
-          p:0,
-          pr:1
+          m: 0,
+          ml: "auto",
+          p: 0,
+          pr: 1,
         }}
       >
         {isAuth}

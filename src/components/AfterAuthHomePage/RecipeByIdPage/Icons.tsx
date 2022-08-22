@@ -45,7 +45,11 @@ export const Icons = ({ diets, veryHealthy }: IconPropsType) => (
             mr: 1,
           }}
           draggable="false"
-          src={urlBadgeList[diet].path}
+          src={
+            urlBadgeList[diet]
+              ? urlBadgeList[diet].path
+              : urlBadgeList["low fodmap"].path
+          }
           alt={diet}
         />
       </Tooltip>

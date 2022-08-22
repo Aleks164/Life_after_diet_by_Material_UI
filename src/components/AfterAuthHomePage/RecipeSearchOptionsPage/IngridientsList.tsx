@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Alert, Autocomplete, Box, Fab, Grid, TextField } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { BookmarkPropsType, InputParamType } from "../../../types/types";
+import {
+  ConfiguratorItemParamType,
+  InputParamType,
+} from "../../../types/types";
 import { ingridientsList } from "../../../utils/ingridientsList";
 import { addIngredientToList } from "./addIngredientToList";
 import { AccordionIngridients } from "./AccordionIngridients";
@@ -9,7 +12,7 @@ import { AccordionIngridients } from "./AccordionIngridients";
 export const IngridientsList = ({
   settings,
   setRequestSettings,
-}: BookmarkPropsType) => {
+}: ConfiguratorItemParamType) => {
   const ingridients = Object.keys(ingridientsList);
   const [ingridientInputValue, setIngridientInputValue] = useState("");
   const [open, setOpen] = useState(false);

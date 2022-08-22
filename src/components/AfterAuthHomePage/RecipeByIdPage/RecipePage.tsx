@@ -3,45 +3,20 @@ import { useNavigate } from "react-router-dom";
 import ReplyAllIcon from "@mui/icons-material/ReplyAll";
 import {
   Box,
-  Button,
   Grid,
   IconButton,
   Paper,
-  Rating,
-  Tab,
-  Tabs,
   Tooltip,
   Typography,
 } from "@mui/material";
-import StarIcon from '@mui/icons-material/Star';
-import { RecipeType, TabPanelProps } from "@/types/types";
+import StarIcon from "@mui/icons-material/Star";
+import { RecipeType } from "@/types/types";
 import { RecipeCart } from "./RecipeCart";
 import { RecipeInstruction } from "./RecipeInstruction";
 import { useClientSettings } from "@/hooks/useClientSettings";
 import { changeFavouriteStatus } from "./changeFavouriteStatus";
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
+import { TabPanel } from "../../TabPanel/TabPanel";
+import { AppTabsContainer } from "../../TabPanel/AppTabsContainer";
 
 export const RecipePage = ({ recipe }: RecipeType) => {
   const { сlientFavourite, setClientFavourite } = useClientSettings();
@@ -79,15 +54,13 @@ export const RecipePage = ({ recipe }: RecipeType) => {
     setIsItInFafouritList,
   };
   const [value, setValue] = useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  const listOfHeaders = ["Description", "Сooking"];
 
   return (
     <Paper
       elevation={2}
       sx={{
-        m: 1,        
+        m: 1,
         maxWidth: "1050px",
         ml: "auto",
         mr: "auto",
@@ -175,7 +148,7 @@ export const RecipePage = ({ recipe }: RecipeType) => {
               sx={{
                 position: "absolute",
                 right: "0px",
-                zIndex: 10,               
+                zIndex: 10,
               }}
             >
               <Tooltip
@@ -186,21 +159,24 @@ export const RecipePage = ({ recipe }: RecipeType) => {
                 }
                 followCursor
               >
-                  <IconButton sx={{color:`${isItInFafouritList ?"gold":"#b6b6b6"}`}} aria-label="changeFavouriteStatus"  onClick={() => changeFavouriteStatus(fafouriteParams)}>
-        <StarIcon   sx={{              
-                fontSize: "5.5rem",
-              }}/>
-      </IconButton>                
+                <IconButton
+                  sx={{ color: `${isItInFafouritList ? "gold" : "#b6b6b6"}` }}
+                  aria-label="changeFavouriteStatus"
+                  onClick={() => changeFavouriteStatus(fafouriteParams)}
+                >
+                  <StarIcon
+                    sx={{
+                      fontSize: "5.5rem",
+                    }}
+                  />
+                </IconButton>
               </Tooltip>
             </Box>
-            <Tabs
+            <AppTabsContainer
               value={value}
-              onChange={handleChange}
-              aria-label="basic tabs example"
-            >
-              <Tab label="Description" {...a11yProps(0)} />
-              <Tab label="Сooking" {...a11yProps(1)} />
-            </Tabs>
+              setValue={setValue}
+              listOfHeaders={listOfHeaders}
+            />
           </Box>
           <TabPanel value={value} index={0}>
             <RecipeCart recipe={recipe} />

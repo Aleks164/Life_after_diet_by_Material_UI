@@ -1,7 +1,7 @@
 import React from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ComponentStory } from "@storybook/react";
-import { CuisinesListBookmark } from "@/components/AfterAuthHomePage/CuisinesListBookmark/CuisinesListBookmark";
+import { CuisinesListBookmark } from "@/components/AfterAuthHomePage/ConfiguratorBookmarks/CuisinesListBookmark/CuisinesListBookmark";
 import { defaultSettings } from "@/utils/defaultSettings";
 import { SettingType } from "@/types/types";
 import "@/components/AfterAuthHomePage/AfterAuthHomePageStyles.css";

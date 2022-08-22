@@ -1,24 +1,18 @@
 import React, { useState } from "react";
-import {
-  Box,
-  CircularProgress,
-  Divider,
-  FormLabel,
-  Grid,
-  Paper,
-} from "@mui/material";
-import { BookmarkPropsType, isLoadingType } from "@/types/types";
-import { ViewRecipesButton } from "../ViewRecipesButton";
+import { Box, Divider, FormLabel, Grid, Paper } from "@mui/material";
+import { ConfiguratorItemParamType, isLoadingType } from "@/types/types";
+import { ShowRecipesButton } from "../ShowRecipesButton";
 import { IngridientsList } from "./IngridientsList";
 import { DietChooseField } from "./DietChooseField";
 import { MealTypesSelector } from "./MealTypesSelector";
 import { ExcludeIngridientList } from "./ExcludeIngridientList";
 import { MaxCaloriesInput } from "./MaxCaloriesInput ";
+import { CustomSpinner } from "@/components/CustomSpinner/CustomSpinner";
 
 export const DietSelector = ({
   settings,
   setRequestSettings,
-}: BookmarkPropsType) => {
+}: ConfiguratorItemParamType) => {
   const [isLoading, setIsLoading] = useState<isLoadingType>(false);
   return (
     <Paper sx={{ p: 3 }} elevation={3}>
@@ -78,7 +72,7 @@ export const DietSelector = ({
               </Grid>
             </Grid>
             <Grid item xs={3}>
-              <ViewRecipesButton
+              <ShowRecipesButton
                 settings={settings}
                 setRequestSettings={setRequestSettings}
                 setIsLoading={setIsLoading}
@@ -87,15 +81,7 @@ export const DietSelector = ({
           </Grid>
         </Box>
       ) : (
-        <CircularProgress
-          size={150}
-          sx={{
-            display: "block",
-            margin: "auto",
-            marginTop: "15%",
-            marginBottom: "25%",
-          }}
-        />
+        <CustomSpinner />
       )}
     </Paper>
   );

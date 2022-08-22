@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Alert, Autocomplete, Box, Fab, Grid, TextField } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { BookmarkPropsType, InputParamType } from "../../../types/types";
-import { ingridientsList } from "../../../utils/ingridientsList";
+import { ConfiguratorItemParamType, InputParamType } from "@/types/types";
+import { ingridientsList } from "@/utils/ingridientsList";
 import { addIngredientToList } from "./addIngredientToList";
 import { AccordionExcludeIngridients } from "./AccordionExcludeIngridients";
 
 export const ExcludeIngridientList = ({
   settings,
   setRequestSettings,
-}: BookmarkPropsType) => {
+}: ConfiguratorItemParamType) => {
   const excludeIngridients = Object.keys(ingridientsList);
 
   const [ingridientInputValue, setIngridientInputValue] = useState("");

@@ -6,7 +6,7 @@ import { MealTypes } from "@/utils/consts";
 export const MealTypesSelector = ({
   settings,
   setRequestSettings,
-}: BookmarkPropsType) => {
+}: ConfiguratorItemParamType) => {
   const curMealType = settings.mealTypesSelector.mealType;
   const [selectValue, setSelectValue] = useState(curMealType);
 

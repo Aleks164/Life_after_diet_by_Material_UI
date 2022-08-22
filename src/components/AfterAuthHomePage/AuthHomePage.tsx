@@ -1,78 +1,40 @@
 import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { CuisinesListBookmark } from "./CuisinesListBookmark/CuisinesListBookmark";
-import { IntolerancesListBookmark } from "./IntolerancesListBookmark/IntolerancesListBookmark";
+import { CuisinesListBookmark } from "./ConfiguratorBookmarks/CuisinesListBookmark/CuisinesListBookmark";
 import { DietDefenitionList } from "./DietDefenition";
 import { DietSelector } from "./RecipeSearchOptionsPage/DietSelector";
-import { BookmarkPropsType } from "../../types/types";
-
-interface TabPanelProps {
-  children?: React.ReactNode;
-  dir?: string;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box>{children}</Box>}
-    </div>
-  );
-}
-
-function tabsProps(index: number) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
+import { ConfiguratorItemParamType } from "@/types/types";
+import { AppTabsContainer } from "../TabPanel/AppTabsContainer";
+import { TabPanel } from "../TabPanel/TabPanel";
+import { IntolerancesListBookmark } from "./ConfiguratorBookmarks/IntolerancesListBookmark/IntolerancesListBookmark";
 
 export const AuthHomePage = ({
   settings,
   setRequestSettings,
-}: BookmarkPropsType) => {
+}: ConfiguratorItemParamType) => {
   const theme = useTheme();
   const [value, setValue] = useState(0);
-
+  const listOfHeaders = [
+    "Configurator",
+    "Cuisines",
+    "Intolerances",
+    "Diet definitions",
+  ];
   return (
     <Box
       sx={{
-        mb: 1,       
+        mb: 1,
         maxWidth: "1050px",
         ml: "auto",
         mr: "auto",
       }}
     >
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={(_, newValue) => {
-            setValue(newValue);
-          }}
-          indicatorColor="secondary"
-          textColor="inherit"
-          variant="fullWidth"
-          aria-label="full width tabs example"
-        >
-          <Tab label="Configurator" {...tabsProps(0)} />
-          <Tab label="Cuisines" {...tabsProps(1)} />
-          <Tab label="Intolerances" {...tabsProps(2)} />
-          <Tab label="Diet definitions" {...tabsProps(3)} />
-        </Tabs>
-      </AppBar>
+      <AppTabsContainer
+        value={value}
+        setValue={setValue}
+        listOfHeaders={listOfHeaders}
+      />
       <TabPanel value={value} index={0} dir={theme.direction}>
         <DietSelector
           settings={settings}
