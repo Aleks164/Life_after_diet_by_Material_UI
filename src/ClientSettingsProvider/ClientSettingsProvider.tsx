@@ -28,7 +28,7 @@ export const ClientSettingsProvider = ({ children }: ChildrenType) => {
       deleteOldestItem(newHistory);
       newCrud
         .updateUserParam(userAuth, "history", newHistory)
-        .finally(() => {
+        .finally(() => {           
           setHistory(newHistory);
         })
         .catch((e: Error) => {
@@ -43,6 +43,7 @@ export const ClientSettingsProvider = ({ children }: ChildrenType) => {
       newCrud
         .updateUserParam(userAuth, "favourite", newFavourite)
         .finally(() => {
+             console.log("new",newFavourite)
           setFavourite(newFavourite);
         })
         .catch((e: Error) => {

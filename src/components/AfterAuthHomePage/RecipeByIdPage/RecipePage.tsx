@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ReplyAllIcon from "@mui/icons-material/ReplyAll";
 import {
   Box,
+  Button,
   Grid,
   IconButton,
   Paper,
@@ -12,10 +13,11 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { RecipeType, TabPanelProps } from "../../../types/types";
+import StarIcon from '@mui/icons-material/Star';
+import { RecipeType, TabPanelProps } from "@/types/types";
 import { RecipeCart } from "./RecipeCart";
 import { RecipeInstruction } from "./RecipeInstruction";
-import { useClientSettings } from "../../../hooks/useClientSettings";
+import { useClientSettings } from "@/hooks/useClientSettings";
 import { changeFavouriteStatus } from "./changeFavouriteStatus";
 
 function TabPanel(props: TabPanelProps) {
@@ -85,8 +87,7 @@ export const RecipePage = ({ recipe }: RecipeType) => {
     <Paper
       elevation={2}
       sx={{
-        m: 1,
-        mt: "30px",
+        m: 1,        
         maxWidth: "1050px",
         ml: "auto",
         mr: "auto",
@@ -174,8 +175,7 @@ export const RecipePage = ({ recipe }: RecipeType) => {
               sx={{
                 position: "absolute",
                 right: "0px",
-                zIndex: 10,
-                fontSize: "5.5rem",
+                zIndex: 10,               
               }}
             >
               <Tooltip
@@ -186,15 +186,11 @@ export const RecipePage = ({ recipe }: RecipeType) => {
                 }
                 followCursor
               >
-                <Rating
-                  onClick={() => changeFavouriteStatus(fafouriteParams)}
-                  name="favourite"
-                  defaultValue={isItInFafouritList ? 1 : 0}
-                  max={1}
-                  sx={{
-                    fontSize: "5.5rem",
-                  }}
-                />
+                  <IconButton sx={{color:`${isItInFafouritList ?"gold":"#b6b6b6"}`}} aria-label="changeFavouriteStatus"  onClick={() => changeFavouriteStatus(fafouriteParams)}>
+        <StarIcon   sx={{              
+                fontSize: "5.5rem",
+              }}/>
+      </IconButton>                
               </Tooltip>
             </Box>
             <Tabs

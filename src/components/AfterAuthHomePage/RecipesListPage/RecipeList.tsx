@@ -82,8 +82,7 @@ export const RecipeList = ({
   return (
     <Paper
       sx={{
-        m: 1,
-        mt: "30px",
+        m: 1,        
         maxWidth: "1250px",
         ml: "auto",
         mr: "auto",

@@ -50,8 +50,7 @@ export const AuthHomePage = ({
   return (
     <Box
       sx={{
-        mb: 1,
-        mt: "30px",
+        mb: 1,       
         maxWidth: "1050px",
         ml: "auto",
         mr: "auto",

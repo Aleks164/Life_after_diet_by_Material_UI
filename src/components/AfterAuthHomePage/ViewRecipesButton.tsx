@@ -24,7 +24,6 @@ export const ViewRecipesButton = ({
       variant="contained"
       size="large"
       onClick={async () => {
-        console.log(settings);
         await showRecipes(showRecipesParam);
       }}
     >

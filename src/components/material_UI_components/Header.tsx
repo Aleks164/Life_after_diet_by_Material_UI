@@ -4,8 +4,7 @@ import {
   IconButton,
   Toolbar,
   Typography,
-  Grid,
-  Badge,
+  Grid
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Home, History, Favorite, Info } from "@mui/icons-material";
@@ -55,8 +54,7 @@ export const Header = ({
               </IconButton>
             </Link>
             {isAuth && (
-              <>
-                <Badge color="warning" badgeContent={"2"} invisible={false}>
+              <>                
                   <Link
                     title="History"
                     color="inherit"
@@ -65,8 +63,7 @@ export const Header = ({
                     <IconButton sx={{ color: "rgb(255 255 255 / 85%)" }}>
                       <History fontSize="large" />
                     </IconButton>
-                  </Link>
-                </Badge>
+                  </Link>                            
                 <Link
                   title="Favorite"
                   color="inherit"
@@ -75,7 +72,7 @@ export const Header = ({
                   <IconButton sx={{ color: "rgb(255 255 255 / 85%)" }}>
                     <Favorite fontSize="large" />
                   </IconButton>
-                </Link>
+                </Link> 
               </>
             )}
             <Link title="About" color="inherit" to={RoutesName.ABOUT_ROUTE}>
@@ -111,14 +108,15 @@ export const Header = ({
     {isAuth && (
       <Typography
         variant="h5"
-        sx={{
-          position: "absolute",
-          top: 70,
-          right: 10,
+        sx={{        
           fontFamily: "cursive",
           color: "#edefff",
           textShadow: "#3d3d3e 3px 0px 1px",
           fontWeight: "900",
+          m:0,
+          ml:"auto",
+          p:0,
+          pr:1
         }}
       >
         {isAuth}
