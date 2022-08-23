@@ -64,6 +64,7 @@ export const RecipePage = ({ recipe }: RecipeType) => {
         maxWidth: "1050px",
         ml: "auto",
         mr: "auto",
+        p: "15px"
       }}
     >
       <Box width="fullWidth" sx={styles.Box}>

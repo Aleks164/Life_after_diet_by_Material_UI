@@ -15,7 +15,7 @@ export const GeneralInfo = ({ recipe }: RecipeType) => {
       sx={{ position: "relative" }}
     >
       <Grid item xs={12}>
-        <Typography variant="h5">Recipe info</Typography>
+        <Typography sx={{mt: "10px"}} variant="h5">Recipe info</Typography>
         <Divider sx={{ mb: 2 }} />
       </Grid>
       <Grid item display={{ xs: "none", md: "flex" }} md={3}>
@@ -27,6 +27,7 @@ export const GeneralInfo = ({ recipe }: RecipeType) => {
             overflow: "hidden",
             width: "100%",
             userSelect: "none",
+            borderRadius: "25px"
           }}
           draggable="false"
           src={recipe.image}

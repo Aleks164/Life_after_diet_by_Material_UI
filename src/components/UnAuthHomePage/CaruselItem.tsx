@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { authBenefits } from "@/utils/authBenefits";
 
-export const CaruselItem = ({ index }: { index: number }) => (
+export const CaruselItem = ({ index, path }: { index: number,path:string }) => (
   <Grid
     container
     direction="column"
@@ -41,7 +41,7 @@ export const CaruselItem = ({ index }: { index: number }) => (
         userSelect: "none",
       }}
       draggable="false"
-      src={"https://spoonacular.com/recipeImages/715415-556x370.jpg"}
+      src={path}
       alt={authBenefits[index]}
     />
   </Grid>

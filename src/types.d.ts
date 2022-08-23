@@ -1,12 +1,13 @@
 declare const IS_DEV: boolean;
 declare const SPOON_API_KEY: string;
 declare module "./images/*.png";
-declare module '@/assets/caruselItems/intolerance.png';
-declare module '@/assets/caruselItems/configurator.png';
-declare module '@/assets/caruselItems/favourites.png';
-declare module '@/assets/caruselItems/recipeList.png';
-declare module '@/assets/caruselItems/сusines.png';
-declare module '@/assets/caruselItems/history.png';
+declare module "@/assets/caruselItems/ConfiguratorMenu.png";
+declare module "@/assets/caruselItems/FavouritePage.png"
+declare module "@/assets/caruselItems/HistoryPage.png";
+declare module "@/assets/caruselItems/IntoleranceMenu.png";
+declare module "@/assets/caruselItems/FindeRecipeExample.png";
+declare module "@/assets/caruselItems/CusinesMenu.png";
+declare module "@/assets/caruselItems/RecipeIdExample.png";
 declare module '@/assets/leo.png';
 declare module "@/assets/healthy.svg";
 declare module "@/assets/gluten-free.svg";
