@@ -5,7 +5,7 @@ const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === "development";
-const PREFIX = "Life_after_diet_by_Material_UI";
+const PREFIX = "/Life_after_diet_by_Material_UI/";
 
 module.exports = {
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
