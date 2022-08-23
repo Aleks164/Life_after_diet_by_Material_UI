@@ -1,13 +1,13 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import {Typography, Box } from "@mui/material";
+import { Link } from "react-router-dom/";
+import { Typography, Box } from "@mui/material";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import FitScreenIcon from "@mui/icons-material/FitScreen";
-import { authBenefits,caruselScreens } from "@/utils/authBenefits";
+import { authBenefits, caruselScreens } from "@/utils/authBenefits";
 import { CaruselItem } from "./CaruselItem";
 import { RoutesName } from "@/utils/routes";
-import { Link } from "react-router-dom/";
 
 export const UnAuthHomePage = () => (
   <Box

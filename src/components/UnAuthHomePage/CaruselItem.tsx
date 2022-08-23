@@ -4,7 +4,13 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { authBenefits } from "@/utils/authBenefits";
 
-export const CaruselItem = ({ index, path }: { index: number,path:string }) => (
+export const CaruselItem = ({
+  index,
+  path,
+}: {
+  index: number;
+  path: string;
+}) => (
   <Grid
     container
     direction="column"
