@@ -15,7 +15,7 @@ export const RecipeInstruction = ({ recipe }: RecipeType) => {
   const sorryText = `Sorry, but instruction for this recipe don't wrote yet`;
 
   return (
-    <Grid container>
+    <Grid container sx={{ p: "15px"}}>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <AppTabsContainer
@@ -25,7 +25,7 @@ export const RecipeInstruction = ({ recipe }: RecipeType) => {
           />
         </Box>
         <TabPanel value={value} index={0}>
-          <Typography variant="h4">Instruction</Typography>
+          <Typography sx={{mt: "10px"}} variant="h4">Instruction</Typography>
           <Divider />
           {recipe.instructions !== null ? (
             <Grid container>
@@ -49,7 +49,7 @@ export const RecipeInstruction = ({ recipe }: RecipeType) => {
           )}
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <Typography variant="h4">Preparation</Typography>
+          <Typography sx={{mt: "10px"}} variant="h4">Preparation</Typography>
           <Button
             className="showIngridients"
             onClick={() => {
@@ -70,8 +70,7 @@ export const RecipeInstruction = ({ recipe }: RecipeType) => {
                           {index + 1}. {step.step}
                         </Typography>
                         {step.length && (
-                          <Chip
-                            sx={{ mt: 1 }}
+                          <Chip                          
                             label={`${step.length.number} min`}
                             color="primary"
                           />
@@ -92,7 +91,7 @@ export const RecipeInstruction = ({ recipe }: RecipeType) => {
             </Grid>
             <Grid
               display={{ xs: "none", md: "unset" }}
-              sx={{ mt: "15px" }}
+              sx={{ mt: "15px"}}
               item
               md={2}
             >
@@ -101,7 +100,7 @@ export const RecipeInstruction = ({ recipe }: RecipeType) => {
           </Grid>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <Typography variant="h4">Ingredients</Typography>
+          <Typography sx={{mt: "10px"}} variant="h4">Ingredients</Typography>
           <CustomDivider />
           <Grid container>
             <Grid item xs={12} md={10}>

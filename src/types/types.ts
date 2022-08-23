@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { NavigateFunction } from "react-router-dom";
-import { RecipeResponsType } from "../utils/singlRecipe";
+import { RecipeResponsType } from "@/utils/singlRecipe";
 import { DietListLowerCase } from "@/utils/urlBadgeList";
 import { Favorite } from "@mui/icons-material";
 
@@ -74,22 +74,6 @@ export type SetRecipeItemType = React.Dispatch<
   React.SetStateAction<RecipeItemType[]>
 >;
 
-export type markBookType = string;
-
-export type SetCurMarkbookType = {
-  setCurMarkbook: React.Dispatch<React.SetStateAction<markBookType>>;
-  curMarkbook: string;
-};
-
-export type IngridientsListType = {
-  [name: string]: {
-    name: string;
-    id: string;
-  };
-};
-
-export type RecipeInfoType = RecipeItemType[];
-
 export type isLoadingType = boolean;
 
 export type SetIsLoadingType = React.Dispatch<
@@ -106,10 +90,6 @@ export type SetHistoryType = React.Dispatch<
 
 export type SetFavouriteType = React.Dispatch<
   React.SetStateAction<DietResponsType>
->;
-
-export type SetRecipeInfo = React.Dispatch<
-  React.SetStateAction<RecipeItemType[]>
 >;
 
 export type PageNumberType = number;
@@ -148,14 +128,6 @@ export interface ViewRecipeParamType extends SettingParamType {
 }
 
 export type DietDefenitionType = { [item: number]: string };
-
-export type DietParamType = {
-  settings: SettingType;
-  setRequestSettings: SetRequestSettingsType;
-  setRecipeInfo: SetRecipeInfo;
-  setIsLoading: SetIsLoadingType;
-};
-
 
 export type chooseClearAllType = (setRequestSettings: SetRequestSettingsType, settings: SettingType, fullList: string[]) => void;
 

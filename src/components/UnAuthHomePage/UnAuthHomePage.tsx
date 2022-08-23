@@ -1,12 +1,13 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Link, Typography, Box } from "@mui/material";
+import {Typography, Box } from "@mui/material";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import FitScreenIcon from "@mui/icons-material/FitScreen";
-import { authBenefits } from "@/utils/authBenefits";
+import { authBenefits,caruselScreens } from "@/utils/authBenefits";
 import { CaruselItem } from "./CaruselItem";
 import { RoutesName } from "@/utils/routes";
+import { Link } from "react-router-dom/";
 
 export const UnAuthHomePage = () => (
   <Box
@@ -33,11 +34,11 @@ export const UnAuthHomePage = () => (
         zIndex: "10",
       }}
     >
-      <Link href={RoutesName.LOGIN_ROUTE}>Log in</Link> and you will be able to
+      <Link to={RoutesName.LOGIN_ROUTE}>Log in</Link> and you will be able to
     </Typography>
     <Carousel
-      autoPlay={false}
-      stopAutoPlayOnHover={false}
+      autoPlay={true}
+      stopAutoPlayOnHover={true}
       animation="slide"
       duration={800}
       indicatorIconButtonProps={{
@@ -50,7 +51,7 @@ export const UnAuthHomePage = () => (
       IndicatorIcon={<FitScreenIcon fontSize="large" />}
     >
       {authBenefits.map((_, index) => (
-        <CaruselItem key={index} index={index} />
+        <CaruselItem key={index} index={index} path={caruselScreens[index]} />
       ))}
     </Carousel>
   </Box>

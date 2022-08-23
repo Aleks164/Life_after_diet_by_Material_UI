@@ -9,7 +9,7 @@ export const AuthContext = createContext<AuthKitType>({
 } as AuthKitType);
 
 export const AuthProvider = ({ children }: ChildrenType) => {
-  const [user, setUser] = useState<null | string>("alekweweyleha2@mail.ru");
+  const [user, setUser] = useState<null | string>(null);
   const [beforeLoginPagePath, setBeforeLoginPagePath] = useState<string>(
     RoutesName.HOME_PAGE_ROUTE
   );

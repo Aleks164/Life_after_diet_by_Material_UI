@@ -22,7 +22,7 @@ export const AppRouter = () => {
         path={RoutesName.HOME_PAGE_ROUTE}
         element={<Layout isAuth={userAuth} />}
       >
-        <Route index element={<HomePageSwitcher isAuth={userAuth} />} />
+        <Route index element={<HomePageSwitcher isAuth={userAuth} />} />        
         <Route path={RoutesName.ABOUT_ROUTE} element={<AboutPage />} />
         {!userAuth && (
           <>
