@@ -20,6 +20,8 @@ export const BookmarkTemplate = ({
   bookmarkLable,
   alertInfo,
   fieldName,
+  Icon,
+  ChecekedIcon
 }: BookmarkPropsType) => (
   <Paper elevation={3}>
     <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
@@ -31,6 +33,8 @@ export const BookmarkTemplate = ({
         fullList={fullList}
         togleStatus={togleStatus}
         fieldName={fieldName}
+        Icon={Icon}
+  ChecekedIcon={ChecekedIcon}
       />
     </FormControl>
     <Grid container direction="row" justifyContent="center" alignItems="center">

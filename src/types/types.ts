@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { NavigateFunction } from "react-router-dom";
 import { RecipeResponsType } from "../utils/singlRecipe";
 import { DietListLowerCase } from "@/utils/urlBadgeList";
+import { Favorite } from "@mui/icons-material";
 
 export type DietResponsType = {
   [id: number]: {
@@ -160,6 +161,8 @@ export type chooseClearAllType = (setRequestSettings: SetRequestSettingsType, se
 
 export type togleStatusType = (e: React.ChangeEvent<HTMLInputElement>, setRequestSettings: SetRequestSettingsType, settings: SettingType) => void;
 
+export type IconType = typeof Favorite;
+
 export type BookmarkPropsType = {
   settings: SettingType;
   setRequestSettings: SetRequestSettingsType;
@@ -169,11 +172,18 @@ export type BookmarkPropsType = {
   bookmarkLable: string;
   alertInfo: string;
   fieldName: "cuisinesList" | "intolerancesList";
+  Icon: IconType;
+  ChecekedIcon: IconType;
 };
 
 export interface BookmarkItemListParamType {
-  settings: SettingType; setRequestSettings: SetRequestSettingsType; fullList: string[]; togleStatus: togleStatusType; fieldName: "cuisinesList" | "intolerancesList";
-
+  settings: SettingType;
+   setRequestSettings: SetRequestSettingsType;
+    fullList: string[];
+     togleStatus: togleStatusType;
+      fieldName: "cuisinesList" | "intolerancesList";
+       Icon: IconType;
+        ChecekedIcon: IconType;
 }
 
 export type selectorParamFunction = (

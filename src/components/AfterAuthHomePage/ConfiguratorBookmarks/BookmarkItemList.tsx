@@ -9,6 +9,8 @@ export const BookmarkItemList = ({
   fullList,
   togleStatus,
   fieldName,
+  Icon,
+  ChecekedIcon
 }: BookmarkItemListParamType) => (
   <FormGroup>
     <Grid
@@ -35,8 +37,8 @@ export const BookmarkItemList = ({
                   togleStatus(e, setRequestSettings, settings);
                 }}
                 name={listItem}
-                icon={<FavoriteBorder />}
-                checkedIcon={<Favorite />}
+                icon={<Icon/>}
+                checkedIcon={<ChecekedIcon/>}
               />
             }
             label={listItem}
