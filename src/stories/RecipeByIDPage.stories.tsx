@@ -13,7 +13,7 @@ export default {
 };
 
 export const RecipeByIdPage = () => {
-  history.pushState({}, "", "/Life_after_diet/recipe/12354");
+  history.pushState({}, "", "/Life_after_diet_by_Material_UI/recipe/12354");
   return (
     <BrowserRouter>
       <ClientSettingsProvider>
