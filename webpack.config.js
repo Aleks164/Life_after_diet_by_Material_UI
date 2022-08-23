@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === "development";
-const PREFIX = "/Life_after_diet/";
+const PREFIX = "Life_after_diet_by_Material_UI";
 
 module.exports = {
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
@@ -41,10 +39,6 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
-        use: isDev ? [MiniCssExtractPlugin.loader, "css-loader"] : [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
-      },
-      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
         generator: {
@@ -56,9 +50,6 @@ module.exports = {
         loader: "html-loader",
       },
     ],
-  },
-  optimization: {
-    minimizer: ["...", new CssMinimizerPlugin()],
   },
   plugins: [
     new Dotenv(),
@@ -73,8 +64,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "404.html",
-    }),
-    new MiniCssExtractPlugin(),
+    })
   ],
 };
 
