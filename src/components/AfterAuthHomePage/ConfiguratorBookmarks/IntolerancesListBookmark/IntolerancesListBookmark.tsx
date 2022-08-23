@@ -1,4 +1,6 @@
 import React from "react";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { ConfiguratorItemParamType } from "@/types/types";
 import { BookmarkTemplate } from "../BookmarkTemplate";
 import { chooseClearAll } from "./chooseClearAll";
@@ -18,5 +20,7 @@ export const IntolerancesListBookmark = ({
     fullList={IntolerancesList}
     togleStatus={togleStatus}
     fieldName={"intolerancesList"}
+    Icon={BookmarkBorderIcon}
+    ChecekedIcon={DeleteForeverIcon}
   />
 );

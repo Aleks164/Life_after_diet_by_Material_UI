@@ -1,4 +1,5 @@
 import React from "react";
+import { FavoriteBorder, Favorite } from "@mui/icons-material";
 import { ConfiguratorItemParamType } from "@/types/types";
 import { BookmarkTemplate } from "../BookmarkTemplate";
 import { chooseClearAll } from "./chooseClearAll";
@@ -20,5 +21,7 @@ export const CuisinesListBookmark = ({
     fullList={Cuisines}
     togleStatus={togleStatus}
     fieldName={"cuisinesList"}
+    Icon={FavoriteBorder}
+    ChecekedIcon={Favorite}
   />
 );
