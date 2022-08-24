@@ -14,6 +14,7 @@
 <p>The functionality of the site is available only to an authenticated user. Authentication is possible through email and password or using a Google account.</p>
 <p>Authenticated users get the opportunity to use the above functionality, as well as the ability to view  history of recipes, add and view favorite recipes.</p>
 <p>An unidentified user can only access the start page with a demonstration of the advantages of a registered user in the form of a slider with screenshots of the functionality and the "About" page.</p>
-<p>The project's deployment is implemented on GitHub Pages "https://aleks164.github.io/Life_after_diet/"</p>
+<p>The project's deployment is implemented on GitHub Pages "https://aleks164.github.io/Life_after_diet_by_Material_UI/"</p>
+<p>Also you can check the previous version (without the Material UI) of this application"</p>
 <p>Remote storage - Firebase Realtime Database</p>
 <p>CI/CD</p>
