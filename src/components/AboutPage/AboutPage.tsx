@@ -117,10 +117,10 @@ export const AboutPage = () => (
       <br />- a parameterized link that you can save and return to at any time
       to see a specific recipe
       <a
-        title="https://aleks164.github.io/Life_after_diet_by_Material_UI/historyrecipe/638822"
+        title="https://aleks164.github.io/Life_after_diet_by_Material_UI/recipe/638822"
         target="_blank"
         rel="noreferrer"
-        href="https://aleks164.github.io/Life_after_diet_by_Material_UI/historyrecipe/638822"
+        href="https://aleks164.github.io/Life_after_diet_by_Material_UI/recipe/638822"
       >
         {" Examle "}
       </a>
@@ -131,10 +131,10 @@ export const AboutPage = () => (
       <br />
       More information on
       <a
-        title="https://github.com/Aleks164/Life_after_diet_by_Material_UI/historytree/diet_App"
+        title="https://github.com/Aleks164/Life_after_diet_by_Material_UI"
         target="_blank"
         rel="noreferrer"
-        href="https://github.com/Aleks164/Life_after_diet_by_Material_UI/historytree/diet_App"
+        href="https://github.com/Aleks164/Life_after_diet_by_Material_UI"
       >
         {" GitHubRepo"}
       </a>
