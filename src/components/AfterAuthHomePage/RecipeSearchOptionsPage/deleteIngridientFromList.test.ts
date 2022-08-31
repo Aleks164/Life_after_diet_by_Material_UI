@@ -1,6 +1,6 @@
 import { deleteIngridientFromList } from "./deleteIngridientFromList";
 import { defaultSettings } from "@/utils/defaultSettings";
-import { InputParamType } from "@/types/types";
+import { DeletingParamType } from "@/types/types";
 
 describe("addIngredientToList test", () => {
   let setRequestSettingsSpy: jest.Mock;
@@ -19,10 +19,10 @@ describe("addIngredientToList test", () => {
     newSettings = JSON.stringify(settings);
     newSettings = JSON.parse(newSettings);
     newSettings.ingridientsSelector.ingridients.push("ahi tuna");
-    deleteIngridientFromList(deletingIngridient, {
+    deleteIngridientFromList( {deletingIngridient,
       settings: newSettings,
       setRequestSettings: setRequestSettingsSpy,
-    } as unknown as InputParamType);
+    } as DeletingParamType);
     expect(setRequestSettingsSpy).toHaveBeenCalledWith(settings);
   });
 });
